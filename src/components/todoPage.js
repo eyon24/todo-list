@@ -33,15 +33,12 @@ export const todoPage = (project) => {
   todoContainer.appendChild(todoList);
 
   const displayTodos = () => {
-    const lsList = JSON.parse(localStorage.getItem("projectsList"));
-    const lsProject = lsList.find((element) => element.id === project.id);
-
     todoList.replaceChildren();
 
-    for (let i = 0; i < lsProject.todos.length; i++) {
-      const lsList = JSON.parse(localStorage.getItem("projectsList"));
-      const lsProject = lsList.find((element) => element.id === project.id);
+    const lsList = JSON.parse(localStorage.getItem("projectsList")) || [];
+    const lsProject = lsList.find((element) => element.id === project.id);
 
+    for (let i = 0; i < lsProject.todos.length; i++) {
       console.log(lsList);
 
       const todoDiv = document.createElement("li");

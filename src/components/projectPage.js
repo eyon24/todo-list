@@ -105,7 +105,7 @@ export const projectPage = () => {
 
       const handleClick = (e) => {
         e.preventDefault();
-        localStorage.setItem("projectsList", JSON.stringify(projectsList));
+        localStorage.setItem("projectsList", JSON.stringify(lsProjectsList));
         contentDiv.replaceChildren();
         todoPage(element);
       };
