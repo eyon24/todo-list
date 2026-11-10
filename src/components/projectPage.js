@@ -35,8 +35,6 @@ export const projectPage = () => {
   projectContainer.appendChild(projectDisplayContainer);
 
   const newProject = () => {
-    console.log(projectsList);
-
     const contentDiv = document.querySelector(".content");
 
     const newProjectModal = document.createElement("div");
