@@ -82,7 +82,8 @@ export const todoPage = (project) => {
       todoDiv.appendChild(editTask);
       editTask.className = "editTaskBtn";
       editTask.textContent = "Edit";
-      editTask.addEventListener("click", () => {
+      editTask.addEventListener("click", (e) => {
+        e.preventDefault();
         const updatedTask = prompt("Please enter updated task.");
 
         if (
@@ -111,7 +112,8 @@ export const todoPage = (project) => {
       todoDiv.appendChild(deleteBtn);
       deleteBtn.className = "todoDeleteBtn";
 
-      deleteBtn.addEventListener("click", () => {
+      deleteBtn.addEventListener("click", (e) => {
+        e.preventDefault();
         if (confirm("Are you sure?")) {
           const updatedProjectTodos = lsProject.todos.filter(
             (e) => e.id !== lsProject.todos[i].id,
@@ -162,7 +164,8 @@ export const todoPage = (project) => {
     todoCancelBtn.textContent = "Cancel";
     todoForm.appendChild(todoCancelBtn);
 
-    todoCancelBtn.addEventListener("click", () => {
+    todoCancelBtn.addEventListener("click", (e) => {
+      e.preventDefault();
       contentDiv.removeChild(todoModal);
     });
 

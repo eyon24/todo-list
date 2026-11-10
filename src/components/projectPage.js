@@ -19,7 +19,8 @@ export const projectPage = () => {
 
   projectNewBtnAndSpan.appendChild(newProjectBtn);
 
-  newProjectBtn.addEventListener("click", () => {
+  newProjectBtn.addEventListener("click", (e) => {
+    e.preventDefault();
     newProject();
   });
 
@@ -69,7 +70,8 @@ export const projectPage = () => {
     cancelBtn.textContent = "Cancel";
     btnContainer.appendChild(cancelBtn);
 
-    cancelBtn.addEventListener("click", () => {
+    cancelBtn.addEventListener("click", (e) => {
+      e.preventDefault();
       contentDiv.removeChild(newProjectModal);
     });
 
@@ -77,6 +79,7 @@ export const projectPage = () => {
     contentDiv.append(newProjectModal);
 
     newProjectModalForm.addEventListener("submit", (e) => {
+      e.preventDefault();
       const newProjectObj = {
         id: Math.random().toString(16).slice(2),
         title: newProjectModalForm_title.value || "New Project",
@@ -129,7 +132,8 @@ export const projectPage = () => {
       projectCardEditBtn.textContent = "Edit";
       projectCard.appendChild(projectCardEditBtn);
 
-      projectCardEditBtn.addEventListener("click", () => {
+      projectCardEditBtn.addEventListener("click", (e) => {
+        e.preventDefault();
         const newTitle = prompt("Enter the updated title.");
 
         if (
@@ -158,7 +162,8 @@ export const projectPage = () => {
       projectCardDeleteBtn.textContent = "Delete";
       projectCard.appendChild(projectCardDeleteBtn);
 
-      projectCardDeleteBtn.addEventListener("click", () => {
+      projectCardDeleteBtn.addEventListener("click", (e) => {
+        e.preventDefault();
         if (confirm("Are you sure?")) {
           const filteredList = lsProjectsList.filter(
             (e) => e.id !== element.id,
