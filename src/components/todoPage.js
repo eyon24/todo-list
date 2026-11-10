@@ -174,7 +174,7 @@ export const todoPage = (project) => {
     todoForm.addEventListener("submit", (e) => {
       e.preventDefault();
 
-      const lsList = JSON.parse(localStorage.getItem("projectsList"));
+      const lsList = JSON.parse(localStorage.getItem("projectsList")) || [];
 
       const updatedList = lsList.map((todo) => {
         if (todo.id === project.id) {

@@ -84,7 +84,7 @@ export const projectPage = () => {
         todos: [],
       };
 
-      const lsList = JSON.parse(localStorage.getItem("projectsList"));
+      const lsList = JSON.parse(localStorage.getItem("projectsList")) || [];
 
       lsList.push(newProjectObj);
       localStorage.setItem("projectsList", JSON.stringify(lsList));
